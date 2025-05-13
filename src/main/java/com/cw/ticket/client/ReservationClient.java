@@ -10,7 +10,7 @@ public class ReservationClient {
     public static void main(String[] args) {
         // Connect to the gRPC server on port 50051
         ManagedChannel channel = ManagedChannelBuilder
-                .forAddress("127.0.0.1", 50052)
+                .forAddress("127.0.0.1", 50051)
                 .usePlaintext()
                 .build();
 
