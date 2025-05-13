@@ -1,10 +1,10 @@
 package com.cw.ticket.tx;
 
+import java.nio.charset.StandardCharsets;
+
 import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.WatchedEvent;
 import org.apache.zookeeper.Watcher;
-
-import java.nio.charset.StandardCharsets;
 
 public class DistributedTxParticipant extends DistributedTx {
 

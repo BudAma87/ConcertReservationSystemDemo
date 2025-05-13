@@ -1,12 +1,16 @@
 package com.cw.ticket.server;
 
-import com.cw.ticket.tx.*;
+import java.util.UUID;
+
+import com.cw.ticket.tx.DistributedTx;
+import com.cw.ticket.tx.DistributedTxCoordinator;
+import com.cw.ticket.tx.DistributedTxListener;
+import com.cw.ticket.tx.DistributedTxParticipant;
+
 import ds.ticket.TicketRequest;
 import ds.ticket.TicketResponse;
 import ds.ticket.TicketServiceGrpc;
 import io.grpc.stub.StreamObserver;
-
-import java.util.UUID;
 
 public class TicketServiceImpl extends TicketServiceGrpc.TicketServiceImplBase implements DistributedTxListener {
 
@@ -14,7 +18,7 @@ public class TicketServiceImpl extends TicketServiceGrpc.TicketServiceImplBase i
     private final boolean isLeader;
     private final int port;
     private TicketRequest pendingRequest;
-    
+
     private boolean transactionStatus = false;
 
     public TicketServiceImpl() {

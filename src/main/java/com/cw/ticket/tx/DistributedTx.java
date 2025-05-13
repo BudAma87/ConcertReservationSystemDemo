@@ -1,8 +1,9 @@
 package com.cw.ticket.tx;
 
-import com.cw.ticket.zookeeper.ZooKeeperClient;
 import org.apache.zookeeper.WatchedEvent;
 import org.apache.zookeeper.Watcher;
+
+import com.cw.ticket.zookeeper.ZooKeeperClient;
 
 public abstract class DistributedTx implements Watcher {
 

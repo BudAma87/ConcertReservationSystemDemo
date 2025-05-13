@@ -10,7 +10,7 @@ public class ReservationClient {
     public static void main(String[] args) {
         // Connect to the gRPC server on port 50051
         ManagedChannel channel = ManagedChannelBuilder
-                .forAddress("localhost", 50051)
+                .forAddress("127.0.0.1", 50052)
                 .usePlaintext()
                 .build();
 
@@ -20,7 +20,7 @@ public class ReservationClient {
 
         // Build a test reservation request
         TicketRequest request = TicketRequest.newBuilder()
-                .setEventId("EVT001")
+                .setEventId("E123")
                 .setSeatType("VIP")
                 .setIncludeAfterParty(true)
                 .build();
